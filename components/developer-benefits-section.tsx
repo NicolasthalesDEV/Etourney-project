@@ -15,7 +15,7 @@ export default function DeveloperBenefitsSection() {
     {
       icon: <Users className="h-10 w-10 text-white" />,
       title: "Player Engagement",
-      description: "Increase player engagements by throwing special tournaments offering cash and prizes",
+      description: "Increase player engagement by throwing special tournaments offering cash and prizes",
     },
   ]
 
