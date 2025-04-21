@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -37,10 +36,17 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Desktop Links - Right Side */}
+        {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-6">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/contact">Contact Us</NavLink>
+          <Link
+            href="/landing"
+            className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium px-5 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-purple-500/25 text-sm"
+          >
+            Become an Investor
+            <ChevronDown className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -58,6 +64,13 @@ export default function Header() {
             <nav className="flex flex-col space-y-4">
               <NavLink href="/">Home</NavLink>
               <NavLink href="/contact">Contact Us</NavLink>
+              <Link
+                href="/landing"
+                className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium px-5 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-purple-500/25 text-sm"
+              >
+                Become an Investor
+                <ChevronDown className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </nav>
           </div>
         </div>
@@ -71,16 +84,5 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
     <Link href={href} className="text-white/80 hover:text-white transition-colors font-medium">
       {children}
     </Link>
-  )
-}
-
-function NavDropdown({ title }: { title: string }) {
-  return (
-    <div className="relative group">
-      <button className="flex items-center text-white/80 hover:text-white transition-colors font-medium">
-        {title}
-        <ChevronDown className="ml-1 h-4 w-4" />
-      </button>
-    </div>
   )
 }
