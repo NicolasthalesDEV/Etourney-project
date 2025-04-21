@@ -10,15 +10,15 @@ export async function POST(req: NextRequest) {
     email,
     phone,
     investmentExperience,
-    message
+    message,
   } = body
 
   const name = `${firstName} ${lastName}`
 
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: parseInt(process.env.EMAIL_PORT || '465'),
-    secure: true,
+    port: 587, // use porta 587
+    secure: false, // STARTTLS em vez de SMTPS puro (porta 465)
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -40,8 +40,8 @@ export async function POST(req: NextRequest) {
     })
 
     return NextResponse.json({ success: true }, { status: 200 })
-  } catch (error) {
-    console.error('Email send error:', error)
-    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
+  } catch (error: any) {
+    console.error('Erro ao enviar e-mail:', JSON.stringify(error, null, 2))
+    return NextResponse.json({ error: 'Erro ao enviar e-mail' }, { status: 500 })
   }
 }
