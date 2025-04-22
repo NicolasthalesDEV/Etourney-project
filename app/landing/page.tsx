@@ -134,14 +134,14 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col relative">
       {/* Background Image Layer */}
-    <div
-      className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/Background.jpg.jpeg')",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/70" />
-    </div>
+      <div
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/Background.jpg.jpeg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
 
 
       {/* Decorative Background Elements */}
@@ -165,32 +165,28 @@ export default function Home() {
       <div className="relative z-10">
         {/* Header */}
         <header
-  className="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
-  style={{
-    backgroundColor: scrollY > 50 ? "rgba(0,0,0,0.7)" : "transparent",
-    backdropFilter: scrollY > 50 ? "blur(10px)" : "none",
-  }}
->
-  <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-    <div className="flex items-center gap-2">
-      <div className="bg-gradient-to-r from-purple-500 to-indigo-600 p-2 rounded-full">
-        <Gamepad2 className="h-5 w-5 text-white" />
-      </div>
-      <span className="text-xl font-bold text-white">Etourney</span>
-    </div>
+          className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-transparent"
+        >
+          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="bg-gradient-to-r from-purple-500 to-indigo-600 p-2 rounded-full">
+                <Gamepad2 className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-xl font-bold text-white">Etourney</span>
+            </div>
 
-    <nav className="hidden md:flex items-center gap-8">
-    <a
-  href="/"
-  className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-purple-500/25 text-sm"
->
-  Back to Home
-  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-</a>
+            <nav className="hidden md:flex items-center gap-8">
+              <a
+                href="/"
+                className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-purple-500/25 text-sm"
+              >
+                Back to Home
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </nav>
+          </div>
+        </header>
 
-    </nav>
-  </div>
-</header>
 
         {/* Hero Section */}
         <section
@@ -498,9 +494,8 @@ export default function Home() {
                           <input
                             id="firstName"
                             type="text"
-                            className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${
-                              errors.firstName ? "border-red-500" : "border-purple-500/30"
-                            }`}
+                            className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${errors.firstName ? "border-red-500" : "border-purple-500/30"
+                              }`}
                             placeholder="John"
                             {...register("firstName", { required: "First name is required" })}
                           />
@@ -515,9 +510,8 @@ export default function Home() {
                         <input
                           id="lastName"
                           type="text"
-                          className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${
-                            errors.lastName ? "border-red-500" : "border-purple-500/30"
-                          }`}
+                          className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${errors.lastName ? "border-red-500" : "border-purple-500/30"
+                            }`}
                           placeholder="Doe"
                           {...register("lastName", { required: "Last name is required" })}
                         />
@@ -533,9 +527,8 @@ export default function Home() {
                         <input
                           id="email"
                           type="email"
-                          className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${
-                            errors.email ? "border-red-500" : "border-purple-500/30"
-                          }`}
+                          className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${errors.email ? "border-red-500" : "border-purple-500/30"
+                            }`}
                           placeholder="john.doe@example.com"
                           {...register("email", {
                             required: "Email is required",
@@ -555,9 +548,8 @@ export default function Home() {
                         <input
                           id="phone"
                           type="tel"
-                          className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${
-                            errors.phone ? "border-red-500" : "border-purple-500/30"
-                          }`}
+                          className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${errors.phone ? "border-red-500" : "border-purple-500/30"
+                            }`}
                           placeholder="+1 (555) 123-4567"
                           {...register("phone", { required: "Phone number is required" })}
                         />
@@ -572,9 +564,8 @@ export default function Home() {
                       <div className="relative group">
                         <select
                           id="investmentExperience"
-                          className={`w-full p-4 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 text-white rounded-xl border appearance-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none hover:from-purple-800/50 hover:to-indigo-800/50 ${
-                            errors.investmentExperience ? "border-red-500" : "border-purple-500/30"
-                          }`}
+                          className={`w-full p-4 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 text-white rounded-xl border appearance-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none hover:from-purple-800/50 hover:to-indigo-800/50 ${errors.investmentExperience ? "border-red-500" : "border-purple-500/30"
+                            }`}
                           {...register("investmentExperience", {
                             required: "Please select your investment experience",
                           })}
@@ -614,9 +605,8 @@ export default function Home() {
                       <textarea
                         id="message"
                         rows={4}
-                        className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${
-                          errors.message ? "border-red-500" : "border-purple-500/30"
-                        }`}
+                        className={`w-full p-4 bg-white/10 text-white rounded-xl border focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 outline-none ${errors.message ? "border-red-500" : "border-purple-500/30"
+                          }`}
                         placeholder="Tell us about your investment interests..."
                         {...register("message", { required: "Please enter a message" })}
                       ></textarea>
